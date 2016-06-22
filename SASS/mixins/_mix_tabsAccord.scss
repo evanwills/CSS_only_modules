@@ -1,0 +1,39 @@
+
+@mixin tabsAccord-Media($size) {
+	$do: true;
+	$upper: $xs-max;
+	$lower: $sm-min;
+
+
+	@if $size == sm {
+		$upper: $sm-max;
+		$lower: $md-min;
+	}
+	@else {
+		@if $size == md {
+			$upper: $md-max;
+			$lower: $lg-min;
+		}
+		@else {
+			@if $size == lg {
+				$upper: $lg-max;
+				$lower: $xl-min;
+			}
+			@else {
+				@if $size == xl {
+					$do: false;
+					@include accordion-block(xl);
+				}
+			}
+		}
+	}
+
+	@if $do == true {
+		@media screen and (max-width: $upper) {
+			@include accordion-block($size);
+		}
+		@media screen and (min-width: $lower) {
+			@include tabs-block($size);
+		}
+	}
+}

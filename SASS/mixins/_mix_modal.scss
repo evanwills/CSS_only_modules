@@ -1,0 +1,37 @@
+@mixin modal-customisation($size, $width, $margin, $left: 50%, $bottom: auto, $right: auto, $top: false) {
+	$sub-size: $width;
+	@if $width == auto {
+		$sub-size: 'full';
+	}
+	@else {
+		$sub-size: $width;
+		$width: $width / 100 * 100%;
+	}
+	.modal-content__#{$size}-#{$sub-size} {
+		@if $top != false {
+		top: $top;
+		}
+		right: $right;
+		bottom: $bottom;
+		left: $left;
+		margin-left: $margin;
+		@if $width == auto {
+			width: auto;
+		}
+		@else {
+			width: #{$width};
+		}
+	}
+}
+
+@mixin modal-media($selector, $width, $name) {
+	@media screen and ($selector: $width) {
+
+		@include modal_customisation($name, auto, auto, 2em, 2em, 2em, 2em);
+		@include modal_customisation($name, 50,-26%);
+		@include modal_customisation($name, 60, -32%);
+		@include modal_customisation($name, 70, -37%);
+		@include modal_customisation($name, 80, -43%);
+		@include modal_customisation($name, 90, -47%);
+	}
+}

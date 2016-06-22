@@ -1,0 +1,16 @@
+.tabAcc {
+	box-sizing: border-box;
+	position: relative;
+	margin-bottom: 1em;
+}
+.tabAcc-toggle {
+	position: absolute;
+	left: -1000em;
+}
+
+@include tabsAccord-Media('xs');
+@include tabsAccord-Media('sm');
+@include tabsAccord-Media('md');
+@include tabsAccord-Media('lg');
+@include tabsAccord-Media('xl');
+

@@ -1,0 +1,76 @@
+
+@media screen {
+	.modal > .modal-content {
+		display: none;
+	}
+	.modal-content {
+		position: fixed;
+		top: 5em;
+		right: 5em;
+		bottom: 5em;
+		left: 5em;
+		background-color: #fff;
+		padding: 1em;
+		overflow-y: auto;
+		border-radius: 0.4em;
+		box-shadow: 0.5em 0.5em 1.5em rgba(0,0,0,0.7);
+		border: 0.05em solid #002;
+	}
+
+	input.modal-control {
+		position: absolute;
+		top: -10000em;
+		left: -10000em;
+
+
+		+ label {
+			.modal-closed {
+				display: inline-block;
+			}
+			.modal-open {
+				display: none;
+			}
+		}
+
+		&:checked + label {
+			position: fixed;
+			top: 0%;
+			right: 0%;
+			bottom: 0%;
+			left: 0%;
+			background-color: #005;
+			background-color: rgba( 0 , 0 , 50 , 0.8 );
+			.modal-closed {
+				display: none;
+			}
+			.modal-open {
+				display: inline-block;
+			}
+		}
+	}
+	.modal > input.modal-control:checked + label + .modal-content {
+		display: block
+	}
+
+	.btn {
+		border: 0.1em solid #ccc;
+		background: #f8ffe8; /* Old browsers */
+		background: -moz-linear-gradient(top, #f8ffe8 0%, #e3f5ab 33%, #79ce7f 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #f8ffe8 0%,#e3f5ab 33%,#79ce7f 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #f8ffe8 0%,#e3f5ab 33%,#79ce7f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		/* @include background-image(linear-gradient(top, #f8ffe8 0%,#e3f5ab 33%,#79ce7f 100%)); */
+		padding: 0.5em 0.8em;
+		border-radius: 0.3em;
+		display: inline-block;
+		box-shadow: inset -0.1em -0.1em 0.2em rgba(0,0,0,0.1);
+	}
+}
+@include modal-media('min-width', $lg-min, 'lg');
+@include modal-media('max-width', $md-max, 'md');
+@include modal-media('max-width', $sm-max, 'sm');
+@include modal-media('max-width', $xs-max, 'xs');
+
+
+@media aural, braille {
+	.modal-control , .modal-control-label { display: none; }
+}

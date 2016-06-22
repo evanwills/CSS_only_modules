@@ -1,0 +1,126 @@
+@mixin tabs-block($size: false) {
+
+	/**
+	 * START: Tabs styling (using #{$size})
+	 */
+
+	$prefix: tabs;
+	$suffix: group;
+	@if $size != false {
+		$prefix: tabAcc;
+		$suffix: #{$size}-acc;
+	}
+
+
+	.#{$prefix}-#{$suffix} {
+		width: 100%;
+		z-index: 0;
+
+		&.#{$prefix}-dynamic-height {
+			padding-top: 2.7em;
+
+			.#{$prefix}-tab-ctrl {
+				position: absolute;
+				top: 0em;
+
+//				@for $i from 4 through 10 {
+//					&.#{$prefix}-width-#{$i} { width: #{$i}em; }
+//				}
+
+				@for $i from 1 through 20 {
+					&.#{$prefix}-offset-#{$i} { left: #{$i}em; }
+				}
+			}
+
+			.#{$prefix}-item {
+				display: none;
+			}
+			input.#{$prefix}-toggle:checked + .#{$prefix}-tab-ctrl + .#{$prefix}-item {
+				display: block;
+			}
+		}
+
+		&.#{$prefix}-fixed-height {
+
+			.#{$prefix}-item {
+				position: absolute;
+				top: 2em;
+				right: 0%;
+				bottom: 0%;
+				left: 0%;
+				overflow-y: auto;
+			}
+
+			@for $i from 1 through 7 {
+				$i: $i * 5;
+				&.#{$prefix}-#{$i}-high {
+					height: #{$i}em;
+				}
+			}
+		}
+
+
+		.#{$prefix}-tab-ctrl {
+			background-color: #ccc;
+		}
+
+		.#{$prefix}-item {
+			border: 0.1em solid #ccc;
+			background-color: #fff;
+			z-index: -50;
+			padding: 1em 1em;
+			position: relative;
+			margin-top: -0.2em;
+			border-radius: 0.3em;
+
+			h1 {
+				margin-top: 0%;
+				font-family: verdana, arial, helvetica, sans-serif;
+			}
+		}
+
+		input.#{$prefix}-toggle {
+			+ .#{$prefix}-tab-ctrl {
+				padding: 0.5em 1em;
+				border-top-left-radius: 0.5em;
+				border-top-right-radius: 0.5em;
+				cursor: pointer;
+
+				+ .#{$prefix}-item {
+//					display: none;
+					opacity: 0;
+					transition-property: opacity;
+					transition-duration: 0.5s;
+					transition-timing-function: ease-out;
+				}
+			}
+			&:checked {
+				+ .#{$prefix}-tab-ctrl {
+					background-color: #fff;
+					border: 0.1em solid #ccc;
+					border-bottom: 0.2em solid #fff !important;
+					cursor:default;
+					z-index: 10;
+
+					+ .#{$prefix}-item {
+						z-index: -1;
+						background-color: #fff;
+						box-shadow: none;
+//						display: block;
+						opacity: 1;
+					}
+				}
+			}
+
+			&:first-child + .#{$prefix}-tab-ctrl {
+				margin-left: 1em;
+			}
+
+		}
+
+	}
+
+	/**
+	 *  END:  Tabs styling (using #{$size})
+	 */
+}

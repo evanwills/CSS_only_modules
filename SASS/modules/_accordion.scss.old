@@ -1,0 +1,60 @@
+
+.accordion {
+	margin-bottom: 1em;
+	position: relative;
+	border-radius: 0.5em;
+
+	input {
+		position: absolute;
+		top: 1.3em;
+		right: 1em;
+	}
+	h1 {
+		font-family: verdana, arial, helvetica, sans-serif;
+		margin: 0%;
+		background-color: #aaf;
+		border-radius: 0.2em;
+		label {
+			display: block;
+			cursor: pointer;
+			padding: 0.5em 1em ;
+		}
+	}
+}
+.accordion-block {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+input.accordion-toggle {
+	+ h1 + .accordion-block {
+		height: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		transition-property: height, padding-top, padding-bottom;
+		transition-duration: 0.5s, 0.5s, 0.5s;
+		transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+	/*	margin-top: -1em; */
+		z-index: -1;
+		overflow: hidden;
+	}
+	&:checked + h1 {
+//		color:#fff;
+//		background-color: #009;
+		border-bottom-left-radius: 0em;
+		border-bottom-right-radius: 0em;
+		border: #009;
+		 + .accordion-block {
+			margin-top: auto;
+			height: auto;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			z-index: 1;
+			border-right: 0.1em solid #ccc;
+			border-bottom: 0.1em solid #ccc;
+			border-left: 0.1em solid #ccc;
+			border-bottom-left-radius: 0.5em;
+			border-bottom-right-radius: 0.5em;
+		}
+	}
+}

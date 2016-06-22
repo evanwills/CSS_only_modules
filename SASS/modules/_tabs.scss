@@ -1,0 +1,86 @@
+
+.tabs {
+	box-sizing: border-box;
+	margin-bottom: 1em;
+	position: relative;
+	width: 100%;
+	z-index: 0;
+	padding-top: 2.15em;
+
+	label {
+		position: absolute;
+		top: 0%;
+		display: block;
+		padding: 0.5em 0.5em 0.1em;
+		cursor: pointer;
+		border: 0.1em solid #ccc;
+		border-top-left-radius: 0.3em;
+		border-top-right-radius: 0.3em;
+		z-index: -1;
+		box-sizing: border-box;
+		text-align: center;
+		background-color: #ccc;
+
+		&.tabs-width-4 { width: 4em; }
+		&.tabs-width-5 { width: 5em; }
+		&.tabs-width-7 { width: 6em; }
+		&.tabs-width-6 { width: 7em; }
+		&.tabs-offset-1 { left: 1em; }
+		&.tabs-offset-2 { left: 2em; }
+		&.tabs-offset-3 { left: 3em; }
+		&.tabs-offset-4 { left: 4em; }
+		&.tabs-offset-5 { left: 5em; }
+		&.tabs-offset-6 { left: 6em; }
+		&.tabs-offset-7 { left: 7em; }
+		&.tabs-offset-8 { left: 8em; }
+		&.tabs-offset-9 { left: 9em; }
+		&.tabs-offset-10 { left: 10em; }
+		&.tabs-offset-11 { left: 11em; }
+		&.tabs-offset-12 { left: 12em; }
+		&.tabs-offset-13 { left: 13em; }
+		&.tabs-offset-14 { left: 14em; }
+		&.tabs-offset-15 { left: 15em; }
+		&.tabs-offset-16 { left: 16em; }
+		&.tabs-offset-17 { left: 17em; }
+		&.tabs-offset-18 { left: 18em; }
+		&.tabs-offset-19 { left: 19em; }
+		&.tabs-offset-20 { left: 20em; }
+	}
+}
+
+.tabs-block {
+	border: 0.1em solid #ccc;
+	border-radius: 0.3em;
+	background-color: #fff;
+	z-index: 50;
+	padding: 1em 1em;
+	position: relative;
+
+	h1 {
+		margin-top: 0%;
+		font-family: verdana, arial, helvetica, sans-serif;
+	}
+}
+
+input.tabs-toggle {
+	position: absolute;
+	left: -1000em;
+
+	+ label + .tabs-block {
+		display: none;
+	}
+}
+
+
+input.tabs-toggle:checked + label {
+	border-bottom: 0.2em solid #fff;
+	cursor:default;
+	z-index: 100;
+	background-color: #fff;
+	box-shadow: none;
+	box-shadow: 0.2em -0.2em 0.2em rgba(0,0,0,0.3);
+
+	+ .tabs-block {
+		display: block;
+	}
+}

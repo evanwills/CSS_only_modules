@@ -1,0 +1,97 @@
+@mixin accordion-block($size: false) {
+
+	/**
+	 * START: Accordion styling (using #{$size})
+	 */
+
+	$prefix: accordion;
+	$suffix: group;
+	$tab-selector: '';
+	@if $size != false {
+		$prefix: tabAcc;
+		$suffix: #{$size}-acc;
+		$tab-selector: " + .#{$prefix}-tab-ctrl ";
+	}
+
+
+
+	.#{$prefix}-#{$suffix} {
+		position: relative;
+		.#{$prefix}-toggle {
+//			position: relative;
+			left: auto;
+			right: 1em;
+			z-index: 100;
+			display: inline-block;
+			margin-top: 1.1em;
+		}
+
+		.#{$prefix}-tab-ctrl {
+			display: none;
+		}
+
+		.#{$prefix}-acc-ctrl {
+			display: block;
+			cursor: pointer;
+			padding: 0.5em 2em 0.5em 1em ;
+		}
+
+		.#{$prefix}-item {
+			margin-bottom: 1em;
+			position: relative;
+			border-radius: 0.5em;
+			h1 {
+				font-family: verdana, arial, helvetica, sans-serif;
+				margin: 0%;
+				background-color: #aaf;
+				border-radius: 0.2em;
+				transition-property: background-color;
+				transition-duration: 0.2s;
+				transition-timing-function: ease-out;
+			}
+		}
+		.#{$prefix}-content {
+			padding: 0 1em;
+			height: 0;
+			line-height: 0%;
+			color: transparent;
+			transition-property: line-height, color;
+			transition-duration: 0.5s, 0.3s;
+			transition-delay: 0s, 0.2s;
+			transition-timing-function: ease-in-out;
+		/*	margin-top: -1em; */
+			z-index: -1;
+			overflow: hidden;
+		}
+
+		input.#{$prefix}-toggle:checked #{$tab-selector} + .#{$prefix}-item {
+			h1 {
+				color:#fff;
+				background-color: #009;
+				border-bottom-left-radius: 0em;
+				border-bottom-right-radius: 0em;
+				border: #009;
+			}
+			.#{$prefix}-content {
+				margin-top: auto;
+				height: auto;
+//				padding-top: 1em;
+//				padding-bottom: 1em;
+				z-index: 1;
+				border-right: 0.1em solid #ccc;
+				border-bottom: 0.1em solid #ccc;
+				border-left: 0.1em solid #ccc;
+				border-bottom-left-radius: 0.5em;
+				border-bottom-right-radius: 0.5em;
+				line-height: $ln-height;
+				color: #000;
+			}
+		}
+
+	}
+
+	/**
+	 *  END:  Accordion styling (using #{$size})
+	 */
+
+}

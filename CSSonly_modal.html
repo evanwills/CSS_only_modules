@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8" />
+		<title>CSS only modal - Evan's CSS (only) style modules</title>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, width=device-width, height=device-height" />
+<!--
+		<script type="text/javascript" src="../../js/jquery-2.1.3.min.js"></script>
+-->
+	</head>
+	<body>
+		<nav>
+			<ul class="nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="CSSonly_accordion.html">Accordion</a></li>
+				<li><a href="CSSonly_carousel.html">Carousel</a></li>
+				<li><a href="CSSonly_modal.html">Modal</a></li>
+				<li><a href="CSSonly_tabs.html">Tabs</a></li>
+				<li><a href="CSSonly_tabs-accordion.html">Tabs Accordion</a></li>
+			</ul>
+		</nav>
+
+
+		<header>
+			<h1>CSS only modal</h1>
+		</header>
+
+		<div class="info-panel">
+			<h2>About</h2>
+			<p>
+			The Ultimate CSS Gradient Editor was created by <a href="http://www.iosart.com/">Alex Sirota (iosart)</a>. If you like this tool, <a href="http://www.colorzilla.com/">check out ColorZilla</a> for more advanced tools such as eyedroppers, color pickers, palette editors and website analyzers.
+			</p><p>
+			As you might know, <a href="http://www.html5rocks.com/">HTML5</a> introduced many exciting features for Web developers. One of the features is the ability to specify gradients using pure CSS3, without having to create any images and use them as repeating backgrounds for gradient effects.
+			</p><p>
+			<strong>Important:</strong> You'll need a recent version of Firefox, Chrome, Safari, Opera or IE to use this Gradient Generator. The resulting CSS gradients are cross-browser - they will work in these browsers and will also fall back to a simpler gradient in older versions of Internet Explorer.
+			</p>
+		</div>
+
+		<div class="info-panel">
+			<h2>Help</h2>
+			<p>
+			The main gradient control allows you to:
+			</p>
+
+			<p>You can use the 'Stops' panel to conrol the color and the position of the currently selected stop more precisely.</p>
+			<p>
+			The 'Preview' panel allows previewing the current gradient as a vertical or horizontal one, and also allows quickly previewing how the Internet Explorer fallback gradient will look in IE.
+			</p><p>
+			Finally, the 'CSS' panel always has the CSS for the current gradient for easy copying and pasting into your stylesheet. You can also use this panel to import an existing gradient CSS into the tool.
+			</p>
+		</div>
+<!--
+		<style type="text/css">
+@media screen {
+	.modal > .modal-content {
+		display: none;
+	}
+	.modal-content {
+		position: fixed;
+		top: 5em;
+		right: 5em;
+		bottom: 5em;
+		left: 5em;
+		background-color: #fff;
+		padding: 1em;
+		overflow-y: auto;
+		border-radius: 0.4em;
+		box-shadow: 0.5em 0.5em 1.5em rgba(0,0,0,0.7);
+		border: 0.05em solid #002;
+	}
+
+	input.modal-control {
+		position: absolute;
+		top: -10000em;
+		left: -10000em;
+	}
+
+	input.modal-control + label .modal-closed {
+		display: inline-block;
+	}
+	input.modal-control + label .modal-open {
+		display: none;
+	}
+	input.modal-control:checked + label .modal-closed {
+		display: none;
+	}
+	input.modal-control:checked + label .modal-open {
+		display: inline-block;
+	}
+	input.modal-control:checked + label {
+		position: fixed;
+		top: 0%;
+		right: 0%;
+		bottom: 0%;
+		left: 0%;
+		background-color: #005;
+		background-color: rgba( 0 , 0 , 50 , 0.8 );
+	}
+	.modal > input.modal-control:checked + label + .modal-content {
+		display: block
+	}
+}
+
+@media screen and (min-width: 993px) {
+	.modal-content__lg-full {
+		left: 2em;
+		right: 2em;
+		top: 2em;
+		bottom: 2em;
+		margin-left: auto;
+		width: auto;
+	}
+	.modal-content__lg-50 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -26%;
+		width: 50%;
+	}
+	.modal-content__lg-60 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -32%;
+		width: 60%;
+	}
+	.modal-content__lg-70 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -37%;
+		width: 70%;
+	}
+	.modal-content__lg-80 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -43%;
+		width: 80%;
+	}
+	.modal-content__lg-90 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -47%;
+		width: 90%;
+	}
+}
+@media screen and (max-width: 992px) {
+	.modal-content__md-full {
+		left: 2em;
+		right: 2em;
+		top: 2em;
+		bottom: 2em;
+		margin-left: auto;
+		width: auto;
+	}
+	.modal-content__md-50 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -26%;
+		width: 50%;
+	}
+	.modal-content__md-60 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -32%;
+		width: 60%;
+	}
+	.modal-content__md-70 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -37%;
+		width: 70%;
+	}
+	.modal-content__md-80 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -43%;
+		width: 80%;
+	}
+	.modal-content__md-90 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -47%;
+		width: 90%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.modal-content__sm-full {
+		left: 2em;
+		right: 2em;
+		top: 2em;
+		bottom: 2em;
+		margin-left: auto;
+		width: auto;
+	}
+	.modal-content__sm-50 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -26%;
+		width: 50%;
+	}
+	.modal-content__sm-60 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -32%;
+		width: 60%;
+	}
+	.modal-content__sm-70 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -37%;
+		width: 70%;
+	}
+	.modal-content__sm-80 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -43%;
+		width: 80%;
+	}
+	.modal-content__sm-90 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -47%;
+		width: 90%;
+	}
+}
+@media screen and (max-width: 430px) {
+	.modal-content__xs-full {
+		left: 2em;
+		right: 2em;
+		top: 2em;
+		bottom: 2em;
+		margin-left: auto;
+		width: auto;
+	}
+	.modal-content__xs-50 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -26%;
+		width: 50%;
+	}
+	.modal-content__xs-60 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -32%;
+		width: 60%;
+	}
+	.modal-content__xs-70 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -37%;
+		width: 70%;
+	}
+	.modal-content__xs-80 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -43%;
+		width: 80%;
+	}
+	.modal-content__xs-90 {
+		right: auto;
+		bottom: auto;
+		left: 50%;
+		margin-left: -47%;
+		width: 90%;
+	}
+}
+@media aural braille {
+	.modal-control , .modal-control-label { display: none; }
+}
+		</style>
+-->
+		<div class="modal">
+			<input type="checkbox" id="modal" value="Modal open" class="modal-control" />
+			<label class="modal-control-label" for="modal">
+				<span class="modal-closed btn">Open Modal</span>
+			</label>
+			<section class="modal-content modal-content__xs-full modal-content__sm-70 modal-content__md-60 modal-content__lg-50">
+				<header>
+					<h1>Modal heading</h1>
+				</header>
+				<div class="modal-body">
+					<div class="info-panel whats-new">
+<h2><a name="whats-new"></a>What's new</h2>
+<ul>
+	<li>Don't generate older Opera, IE10 Preview, Webkit syntax by default (turn back on using "Maximize compatibility" mode)</li>
+	<li>Browser Compatibility panel showing supported browser versions, usage stats etc.</li>
+	<li>Support for <strong>radial</strong> and <strong>diagonal</strong> linear gradients</li>
+	<li>Support for full multi-stop gradients in <strong>Internet Explorer 9</strong> (IE9) using SVG</li>
+	<li>Support for <strong><a href="http://sass-lang.com/">Sass</a></strong> SCSS format using <a href="http://compass-style.org/">Compass</a> <a href="http://compass-style.org/reference/compass/css3/images/">mixins</a> (needs latest beta of Compass)</li>
+	<li><strong>Copy to clipboard</strong> button for quickly grabbing the generated code</li>
+	<li>Easy resizing of preview panel by dragging its corner</li>
+</ul>
+
+<div class="show-more-less-container">
+	<a class="show-more" href="#" onclick="return Gradient.UIUtils.showHideLinkTrigger(event, '.whats-new-previous');">show more...</a>
+	<a class="show-less" href="#" onclick="return Gradient.UIUtils.showHideLinkTrigger(event, '.whats-new-previous');">show less...</a>
+</div>
+<div class="whats-new-previous" style="display:none">
+	<h3>Previous versions</h3>
+	<hr>
+	<ul>
+		<li><strong>Opacity support</strong>
+			<ul>
+				<li>Create transparent css gradients, or add fade-in, fade-out, semi-transparency and similar effects</li>
+				<li>Add any number of opacity stops to your gradient</li>
+				<li>Supports opacity stops at any position - completely independent of color stops</li>
+				<li>Automatically switch to rgba/hsla color output mode when transparency is used</li>
+				<li>Outputs older Internet Explorer opacity format (yes, this will even work with IE6!)</li>
+				<li>Opacity support when importing from CSS</li>
+				<li>Supports importing gradients with transparency from an image</li>
+			</ul>
+		</li>
+		<li><strong>Double click on CSS text</strong> output to select all of it for easy copying</li>
+		<li>More robust new algorithm for converting gradient images to CSS, including alpha support</li>
+	</ul>
+	<hr>
+	<ul>
+		<li><strong>New 'Adjustments' panel</strong> - tweak your gradient or create new flavors
+			<ul>
+				<li>Adjust hue, saturation and lightness</li>
+				<li>Reverse current gradient</li>
+			</ul>
+		</li>
+		<li>Added <strong>hsl</strong> and <strong>hsla</strong> color format support in CSS output</li>
+		<li>Added a <strong>unique permalink</strong> to each gradient for linking to, saving or sharing specific gradients.</li>
+		<li>Added the ability to toggle CSS comments on/off.</li>
+	</ul>
+	<hr>
+
+	<ul>
+		<li>Added support for <strong>4 new gradient formats</strong>:
+			<ul>
+				<li>IE 10+</li>
+				<li>Newer Webkit</li>
+				<li>Opera 11.10+</li>
+				<li>W3C</li>
+			</ul>
+		</li>
+	</ul>
+	<hr>
+	<ul>
+		<li><strong>Import from an image</strong> - convert an existing gradient image to CSS
+			<ul>
+				<li>Supports complex multi-stop gradients</li>
+				<li>Upload an image or import from an image URL</li>
+			</ul>
+		</li>
+	</ul>
+	<hr>
+	<ul>
+		<li><strong>Import from CSS</strong> - enter existing gradient CSS in various formats and import it into the tool</li>
+		<li><strong>Save your gradients</strong> as new presets
+			<ul>
+				<li>Edit your gradient, enter its name and hit 'new'</li>
+				<li>Remove any of your preset gradients using its context menu (right click)</li>
+				<li>Your gradient presets will be persisted in the tool across sessions</li>
+			</ul>
+		</li>
+		<li>Added <strong>rgb</strong> and <strong>rgba</strong> color format support in CSS output</li>
+		<li>Persist settings across sessions - gradient orientation, preview panel dimensions, output color format etc.</li>
+		<li>Keyboard shortcuts - press up/down in color stop entry box to increase/decrease value</li>
+	</ul>
+	<hr>
+</div></div>
+				</div>
+				<footer>
+					<label class="modal-control-label" for="modal">
+						<span class="modal-open btn">Close modal</span>
+					</label>
+				</footer>
+			</section>
+		</div>
+	</body>
+</html>

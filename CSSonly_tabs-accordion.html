@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Pure CSS tabs</title>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, width=device-width, height=device-height" />
+<!--
+		<script type="text/javascript" src="../../js/jquery-2.1.3.min.js"></script>
+-->
+	</head>
+	<body>
+		<nav>
+			<ul class="nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="CSSonly_accordion.html">Accordion</a></li>
+				<li><a href="CSSonly_carousel.html">Carousel</a></li>
+				<li><a href="CSSonly_modal.html">Modal</a></li>
+				<li><a href="CSSonly_tabs.html">Tabs</a></li>
+				<li><a href="CSSonly_tabs-accordion.html">Tabs Accordion</a></li>
+			</ul>
+		</nav>
+
+
+		<h1>Pure CSS Tabs/Accordion (from media queries)</h1>
+
+		<h2>Fixed height tabs</h2>
+
+		<section class="tabAcc tabAcc-sm-acc tabAcc-fixed-height tabAcc-15-high">
+			<input type="radio" name="tabsAcc" id="tabAcc-ctrl_1" class="tabAcc-toggle" checked="checked" />
+			<label for="tabAcc-ctrl_1" class="tabAcc-tab-ctrl">Tab 1</label>
+			<article class="tabAcc-item">
+				<h1><label for="tabAcc-ctrl_1" class="tabAcc-acc-ctrl">This is Tab/Accordion 1</label></h1>
+				<div class="tabAcc-content">
+					<p>This is usually the one that's shown by default</p>
+					<p><a href="#">default tab extra info</a></p>
+				</div>
+			</article>
+
+			<input type="radio" name="tabsAcc" id="tabAcc-ctrl_2" class="tabAcc-toggle" />
+			<label for="tabAcc-ctrl_2" class="tabAcc-tab-ctrl">Tab 2</label>
+			<article class="tabAcc-item">
+				<h1><label for="tabAcc-ctrl_2" class="tabAcc-acc-ctrl">Tabs 2 is the second Tab/Accordion</label></h1>
+				<div class="tabAcc-content">
+					<p>In defiance of that, I was thinking yesterday that it would be interesting to model the output of my ArtBot (current – unoriginal – working title is DrawingMachine III) based the videos listed below. To that end, I’ve been thinking (and codeing).</p>
+					<p><a href="#">read more stuff about tab 2</a></p>
+				</div>
+			</article>
+
+			<input type="radio" name="tabsAcc" id="tabAcc-ctrl_3" class="tabAcc-toggle" />
+			<label for="tabAcc-ctrl_3" class="tabAcc-tab-ctrl">Tab 3</label>
+			<article class="tabAcc-item">
+				<h1><label for="tabAcc-ctrl_3" class="tabAcc-acc-ctrl">Third is Tab/Accordion 3</label></h1>
+				<div class="tabAcc-content">
+					<p>How do we create a pedagogical platform for creative technology that doesn’t rely on a system of ‘closed abstraction’? Is a system of ‘open abstraction’ the opposite and what might that look like in a programmable robotics project? Part of the challenge of teaching code is that so much needs to be learnt before a student can achieve a useful self-directed outcome. The idea for coding projects often lie outside the knowledge and skill set of learner programmers and developers. This is particularly true of younger students (age 5 to 10). In answer to this conundrum many programs build elaborate systems of closed abstraction – these might be described as ‘learning environments’ in which developers build ‘sandbox’ environments that use pseudo-code as a means of teaching programming concepts. Is it possible to build an alternative system of open-abstraction that allows students to immediately explore the potential of code and procedural instructions in interaction with the real world but which is open and extensible – indeed which encourages autonomous extension, adaptation and development that extends the platform itself.</p>
+					<p><a href="#">this is a link (3)</a></p>
+				</div>
+			</article>
+
+			<input type="radio" name="tabsAcc" id="tabAcc-ctrl_4" class="tabAcc-toggle" />
+			<label for="tabAcc-ctrl_4" class="tabAcc-tab-ctrl">Tab 4</label>
+			<article class="tabAcc-item">
+				<h1><label for="tabAcc-ctrl_4" class="tabAcc-acc-ctrl">We'll use this as the fourth Tab/Accordion</label></h1>
+				<div class="tabAcc-content">
+					<p>Control over its procedural action is exclusively exposed through its tactile hardware interface. The challenge in its design consists of exploring how to abstract fundamental programmatic constructs as a hardware interface that is available for continuous and open augmentation and extension.</p>
+					<p><a href="#">this is a link (4)</a></p>
+				</div>
+			</article>
+		</section>
+
+		<p>This is come content after the tabAcc block</p>
+
+		<hr />
+
+		<h2>Variable height tabs</h2>
+
+		<section class="tabAcc tabAcc-md-acc tabAcc-dynamic-height">
+			<input type="radio" name="tabsAccDynamic" id="tabAcc-ctrl_11" class="tabAcc-toggle" checked="checked" />
+			<label for="tabAcc-ctrl_11" class="tabAcc-tab-ctrl ">Tab 1</label>
+			<article class="tabAcc-item">
+				<h1><label for="tabAcc-ctrl_11" class="tabAcc-acc-ctrl">This is Tab/Accordion 1</label></h1>
+				<div class="tabAcc-content">
+					<p>This is usually the one that's shown by default</p>
+					<p><a href="#">default tab extra info</a></p>
+				</div>
+			</article>
+
+			<input type="radio" name="tabsAccDynamic" id="tabAcc-ctrl_12" class="tabAcc-toggle" />
+			<label for="tabAcc-ctrl_12" class="tabAcc-tab-ctrl tabAcc-offset-6">Tab 2</label>
+			<article class="tabAcc-item">
+				<h1><label for="tabAcc-ctrl_12" class="tabAcc-acc-ctrl">Tabs 2 is the second Tab/Accordion</label></h1>
+				<div class="tabAcc-content">
+					<p>In defiance of that, I was thinking yesterday that it would be interesting to model the output of my ArtBot (current – unoriginal – working title is DrawingMachine III) based the videos listed below. To that end, I’ve been thinking (and codeing).</p>
+					<p><a href="#">read more stuff about tab 2</a></p>
+				</div>
+			</article>
+
+			<input type="radio" name="tabsAccDynamic" id="tabAcc-ctrl_13" class="tabAcc-toggle" />
+			<label for="tabAcc-ctrl_13" class="tabAcc-tab-ctrl tabAcc-offset-11">Tab 3</label>
+			<article class="tabAcc-item">
+				<h1><label for="tabAcc-ctrl_13" class="tabAcc-acc-ctrl">Third is Tab/Accordion 3</label></h1>
+				<div class="tabAcc-content">
+					<p>How do we create a pedagogical platform for creative technology that doesn’t rely on a system of ‘closed abstraction’? Is a system of ‘open abstraction’ the opposite and what might that look like in a programmable robotics project? Part of the challenge of teaching code is that so much needs to be learnt before a student can achieve a useful self-directed outcome. The idea for coding projects often lie outside the knowledge and skill set of learner programmers and developers. This is particularly true of younger students (age 5 to 10). In answer to this conundrum many programs build elaborate systems of closed abstraction – these might be described as ‘learning environments’ in which developers build ‘sandbox’ environments that use pseudo-code as a means of teaching programming concepts. Is it possible to build an alternative system of open-abstraction that allows students to immediately explore the potential of code and procedural instructions in interaction with the real world but which is open and extensible – indeed which encourages autonomous extension, adaptation and development that extends the platform itself.</p>
+					<p><a href="#">this is a link (3)</a></p>
+				</div>
+			</article>
+
+			<input type="radio" name="tabsAccDynamic" id="tabAcc-ctrl_14" class="tabAcc-toggle" />
+			<label for="tabAcc-ctrl_14" class="tabAcc-tab-ctrl tabAcc-offset-16">Tab 4</label>
+			<article class="tabAcc-item">
+				<h1><label for="tabAcc-ctrl_14" class="tabAcc-acc-ctrl">We'll use this as the fourth Tab/Accordion</label></h1>
+				<div class="tabAcc-content">
+					<p>Control over its procedural action is exclusively exposed through its tactile hardware interface. The challenge in its design consists of exploring how to abstract fundamental programmatic constructs as a hardware interface that is available for continuous and open augmentation and extension.</p>
+					<p><a href="#">this is a link (4)</a></p>
+				</div>
+			</article>
+		</section>
+
+		<p>This is come content after the tabAcc block</p>
+<!--
+		<script type="text/javascript">
+		</script>
+-->
+	</body>
+</html>
