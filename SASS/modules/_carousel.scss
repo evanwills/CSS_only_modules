@@ -4,9 +4,8 @@
 	margin-bottom: 1em;
 	position: relative;
 	width: 100%;
-	height: 50%;
+	height: 2.7em;
 	z-index: 0;
-	padding-top: 17.275em;
 	text-align: center;
 	border-style: double;
 	border-spacing: 0.1em;
@@ -14,6 +13,29 @@
 	@for $i from 5 through 25 {
 		&-height-#{$i} {
 			height: #{$i}em;
+		}
+	}
+	@for $i from 100 through 10 {
+
+		@media screen and (max-width: #{$i}em) {
+			&-1x1 {
+				@include proportional-height(1,1,$i);
+			}
+			&-3x2 {
+				@include proportional-height(3,2,$i);
+			}
+			&-4x3 {
+				@include proportional-height(4,3,$i);
+			}
+			&-5x3 {
+				@include proportional-height(5,3,$i);
+			}
+			&-16x9 {
+				@include proportional-height(16,9,$i);
+			}
+			&-2x1 {
+				@include proportional-height(2,1,$i);
+			}
 		}
 	}
 	&-toggle__wrap {
@@ -107,4 +129,8 @@ input.carousel-toggle {
 		right: 0%;
 
 	}
+}
+
+
+.carousel {
 }

@@ -3,12 +3,13 @@
 @import "mixins/mix_tabs";
 @import "mixins/mix_accordion";
 @import "mixins/mix_tabsAccord";
+@import "mixins/mix_carousel";
 
 @import "base";
 @import "nav";
 
-@import "modules/tabs";
 @import "modules/accordion";
 @import "modules/carousel";
 @import "modules/modal";
+@import "modules/tabs";
 @import "modules/tabsAccord";

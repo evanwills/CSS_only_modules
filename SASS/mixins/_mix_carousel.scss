@@ -1,0 +1,6 @@
+//@mixin proportional-height( $prefix, $x, $y, $input , $offset: 4) {
+@mixin proportional-height($x, $y, $input , $offset: 4.3) {
+	$padTop: ((( $input / $x ) * $y ) - $offset );
+	padding-top: #{$padTop}em;
+//	}
+}
